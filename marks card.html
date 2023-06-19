@@ -1,0 +1,100 @@
+
+<html lang="en">
+<head>
+    <title>MARKS CARD</title>
+
+    <style>
+        body{
+           align-items: center;
+            background-color:lightblue;
+        }
+
+        .table1{   
+            align-items: center;
+            float: center;
+        }
+    </style>
+   
+</head>
+<body >
+
+     <h2>Made By Prince Gupta</h2>
+    <form class="table1"  >
+
+        <center>
+        <table border="1">
+            <tr>
+                <td>C++</td>
+                <td colspan="3"><input type="text" id="cm"  value="50" autofocus></td>
+            </tr>
+            <tr>
+                <td>JAVA</td>
+                <td><td><input type="text" id="jm" value="50" ></td></td>
+            </tr>
+            <tr>
+                <td>WEB</td>
+                <td><td><input type="text" id="wm" value="50" ></td></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="total" onclick="doTotal();"></td>
+                <td><input type="button" disabled value="percentage" id="percent" onclick="doPer(total.value);"></td>
+                <td><input type="button" value="result" onclick="doRes();"></td>
+                
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><td><input type="text" id="total"></td></td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td><td><input type="text" id="pert"></td></td>
+            </tr>
+
+            <tr>
+                <td>Result</td>
+                <td><td><input type="text" id="pf"></td></td>
+            </tr>
+        </table>
+    </form>
+</center>
+
+
+<script>
+    function doTotal()
+    {
+        
+       var c= document.getElementById("cm").value;
+       var j= document.getElementById("jm").value;
+       var w= document.getElementById("wm").value;
+        tot=parseInt(c)+parseInt(j)+parseInt(w);
+      
+       document.getElementById("total").value=tot;
+      
+       document.getElementById("percent").disabled=false;
+
+    }
+
+    function doPer(tot)
+    {
+         per=tot/3;
+        document.getElementById("pert").value=per;
+
+    }
+
+    function doRes()
+    {
+        
+         res=per;
+         alert(res);
+        if(res>=33){
+            document.getElementById("pf").value="pass";
+        }  
+       
+        else{
+        document.getElementById("pf").value="fail";
+      }
+    }
+</script>
+    
+</body>
+</html>
